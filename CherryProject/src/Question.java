@@ -33,5 +33,10 @@ public class Question {
 	public int getAnswer() {
 		return answer;
 	}
-	
+	public boolean isTrue(int ans)
+	{
+		if(answer==ans)
+			return true;
+		else return false;
+	}
 }
