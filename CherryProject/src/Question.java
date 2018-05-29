@@ -6,7 +6,7 @@ public class Question {
 	String optionC = new String();
 	String optionD = new String();
 	int answer;
-	Question(String _question,String _optionA,String _optionB,
+	public Question(String _question,String _optionA,String _optionB,
 			String _optionC,String _optionD,int _answer){
 		question = _question;
 		optionA = _optionA;
