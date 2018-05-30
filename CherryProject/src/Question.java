@@ -1,11 +1,11 @@
 
 public class Question {
-	String question = new String();
-	String optionA = new String();
-	String optionB = new String();
-	String optionC = new String();
-	String optionD = new String();
-	int answer;
+	private String question;
+	private String optionA;
+	private String optionB;
+	private String optionC;
+	private String optionD;
+	private int answer;
 	public Question(String _question,String _optionA,String _optionB,
 			String _optionC,String _optionD,int _answer){
 		question = _question;
