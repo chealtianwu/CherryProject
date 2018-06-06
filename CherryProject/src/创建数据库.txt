@@ -1,0 +1,81 @@
+use sct
+go
+--创建学生表
+create table Student
+(Sname nvarchar(20),--学生名字(作为用户名)
+ Sno char(12) primary key,--学生学号（作为登录密码）
+ Ssex nchar(1) constraint c1 check(Ssex='男'or Ssex='女'),--学生性别
+ Sage SMALLINT,--学生年龄
+ Sdept char(20)--学生系别
+);
+
+--创建教师表
+create table Teacher
+(Tname nvarchar(20),--教师名字
+ Tno nvarchar(10)primary key,--教师编号
+ Tsex nchar(1) constraint c2 check(Tsex='男'or Tsex='女'),--教师性别
+ Tage SMALLINT,--教师年龄
+ Tcoll char(20)--教师所属学院
+);
+
+--创建单选题表
+create table Single_election
+(SIno nvarchar(100) primary key,--课程编号
+ SIques nvarchar(500),
+ SIselcet nvarchar(200),--选项
+ SIanswer nvarchar(2)--答案
+);
+
+--创建多选题表
+create table Multi_selection
+(MUno nvarchar(100) primary key,--课程编号
+ MUques nvarchar(500),
+ MUselcet nvarchar(200),--选项
+ MUanswer nvarchar(2)--答案
+);
+
+--创建判断题表
+create table Judge
+(Jno nvarchar(100) primary key,--课程编号
+ Jques nvarchar(500),
+ Janswer nvarchar(2)--答案
+);
+
+--创建课程表
+create table Course
+(Sno char(12),--上这个课程的学生
+  foreign key(Sno) references Student(Sno), 
+ Cname nvarchar(20),--课程名字
+ Cno nvarchar(10) primary key,--课程编号
+ Ccredit SMALLINT,
+ Tno nvarchar(10),--上这个课程的老师
+  foreign key(Tno) references Teacher(Tno)
+);
+
+--对应测试课程的题目
+create table Course_Select
+(Cno nvarchar(10),--课程编号
+  foreign key(Cno) references Course(Cno),
+ SIno nvarchar(100),--课程单选题
+  foreign key(SIno) references Single_election(SIno),
+ MUno nvarchar(100),--课程多选题
+  foreign key(MUno) references Multi_selection(MUno),
+ Jno nvarchar(100)--课程判断题
+  foreign key(Jno) references Judge(Jno)
+);
+
+--保存每次所做试卷的成绩（包括每一题的正误）
+create table Course_Score
+(Sno char(12),--上这个课程的学生
+  foreign key(Sno) references Student(Sno), 
+  Cno nvarchar(10),--课程编号
+  foreign key(Cno) references Course(Cno),
+  primary key(Sno,Cno),--把学号和课程作为主键
+  CSGrade SMALLINT,--对应学生此门课程成绩
+  --平均成绩
+  ACSGrade SMALLINT,
+  --最低成绩
+  MAXCSGrade SMALLINT,
+  --最高成绩
+  MINCSGrade SMALLINT
+);

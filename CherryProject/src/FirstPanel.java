@@ -11,25 +11,26 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-class J_ActionListener03 implements ActionListener{
+class J_ActionListener00 implements ActionListener{
+    public void actionPerformed(ActionEvent e) {
+        JOptionPane.showMessageDialog(null,"登陆成功");
+        //Menu2 m=new Menu2();
+        //m.setVisible(true);  //进入试卷界面
+        
+  }
+}
+class J_ActionListener04 implements ActionListener{
 	public void actionPerformed(ActionEvent arg0) {
 		System.exit(0);//退出程序
 	}
 }
-class J_ActionListener04 implements ActionListener{
-	public void actionPerformed(ActionEvent e) {
-		JOptionPane.showMessageDialog(null,"登陆成功");
-		//Menu2 m=new Menu2();
-		//m.setVisible(true);  //进入试卷界面
-		
-  }
-}
+
 class FirstPanel extends JFrame{
 	JLabel b;
 	JTextField t;
 	JButton d;
 	String s[]={"模拟系统登陆","准考证号：","考生姓名：","身份证号：","登陆","退出"};
-	public Menu1(){
+    public FirstPanel(){
 		super("模拟系统登陆界面");
 		Container c=getContentPane();
 		GridBagLayout gr=new GridBagLayout();

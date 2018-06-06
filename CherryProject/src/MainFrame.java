@@ -26,7 +26,7 @@ public class MainFrame extends JFrame{
 	JLabel b;
 	JButton d;
 	String s[]={"无纸化试卷阅卷模拟系统","没头脑小组","退出系统","开始登陆"};
-	public Menu(){
+    public MainFrame(){
 		super("无纸化试卷阅卷模拟系统");
 		Container c=getContentPane();
 		GridBagLayout gr=new GridBagLayout();
@@ -60,7 +60,7 @@ public class MainFrame extends JFrame{
 		}
 }
 	public static void main (String args[]){
-		Menu app=new Menu();
+        MainFrame app=new MainFrame();
 		app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		app.setSize(260,150);
 		app.setVisible(true);
