@@ -13,9 +13,9 @@ import javax.swing.JTextField;
 
 class J_ActionListener00 implements ActionListener{
     public void actionPerformed(ActionEvent e) {
-        JOptionPane.showMessageDialog(null,"登陆成功");
-        //Menu2 m=new Menu2();
-        //m.setVisible(true);  //进入试卷界面
+        //JOptionPane.showMessageDialog(null,"登陆成功");
+    	SecondPanel m=new SecondPanel();
+		m.setVisible(true);  //创建新的窗体，以达到切换窗体的效果，进入登陆页面
         
   }
 }
@@ -64,7 +64,7 @@ class FirstPanel extends JFrame{
 				gc.gridwidth=gw[i];gc.gridheight=gh[i];gc.fill=GridBagConstraints.BOTH;
 				gr.setConstraints(t, gc);c.add(t);}
 			if(gx[i]==1&&gy[i]==2){
-				t=new JTextField("");gc.gridx=gx[i];gc.gridy=gy[i];
+				t=new JTextField();gc.gridx=gx[i];gc.gridy=gy[i];
 				gc.gridwidth=gw[i];gc.gridheight=gh[i];gc.fill=GridBagConstraints.BOTH;
 				gr.setConstraints(t, gc);c.add(t);}
 			if(gx[i]==1&&gy[i]==3){
@@ -74,7 +74,7 @@ class FirstPanel extends JFrame{
 			if(gx[i]==0&&gy[i]==4){
 				d=new JButton(s[4]);gc.gridx=gx[i];gc.gridy=gy[i];
 				gc.gridwidth=gw[i];gc.gridheight=gh[i];gc.fill=GridBagConstraints.CENTER;
-				gr.setConstraints(d, gc);c.add(d);J_ActionListener03 l1=new J_ActionListener03();d.addActionListener(l1);}
+				gr.setConstraints(d, gc);c.add(d);J_ActionListener00 l1=new J_ActionListener00();d.addActionListener(l1);}
 			if(gx[i]==1&&gy[i]==4){
 				d=new JButton(s[5]);gc.gridx=gx[i];gc.gridy=gy[i];
 				gc.gridwidth=gw[i];gc.gridheight=gh[i];gc.fill=GridBagConstraints.CENTER;
