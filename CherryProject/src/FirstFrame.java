@@ -11,11 +11,20 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-class J_ActionListener03 implements ActionListener{
+class J_ActionListener00 implements ActionListener{
+    public void actionPerformed(ActionEvent e) {
+        //JOptionPane.showMessageDialog(null,"登陆成功");
+    	SecondPanel m=new SecondPanel();
+		m.setVisible(true);  //创建新的窗体，以达到切换窗体的效果，进入登陆页面
+        
+  }
+}
+class J_ActionListener04 implements ActionListener{
 	public void actionPerformed(ActionEvent arg0) {
 		System.exit(0);//退出程序
 	}
 }
+<<<<<<< HEAD:CherryProject/src/FirstFrame.java
 class J_ActionListener04 implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		JOptionPane.showMessageDialog(null,"登陆成功");
@@ -26,11 +35,19 @@ class J_ActionListener04 implements ActionListener{
   }
 }
 class FirstFrame extends JFrame{
+=======
+
+class FirstPanel extends JFrame{
+>>>>>>> 2213b6b781ee31916d3458fded018e51a9275fde:CherryProject/src/FirstPanel.java
 	JLabel b;
 	JTextField t;
 	JButton d,e;
 	String s[]={"模拟系统登陆","准考证号：","考生姓名：","身份证号：","登陆","退出"};
+<<<<<<< HEAD:CherryProject/src/FirstFrame.java
 	public FirstFrame(){
+=======
+    public FirstPanel(){
+>>>>>>> 2213b6b781ee31916d3458fded018e51a9275fde:CherryProject/src/FirstPanel.java
 		super("模拟系统登陆界面");
 		Container c=getContentPane();
 		GridBagLayout gr=new GridBagLayout();
@@ -65,7 +82,7 @@ class FirstFrame extends JFrame{
 				gc.gridwidth=gw[i];gc.gridheight=gh[i];gc.fill=GridBagConstraints.BOTH;
 				gr.setConstraints(t, gc);c.add(t);}
 			if(gx[i]==1&&gy[i]==2){
-				t=new JTextField("");gc.gridx=gx[i];gc.gridy=gy[i];
+				t=new JTextField();gc.gridx=gx[i];gc.gridy=gy[i];
 				gc.gridwidth=gw[i];gc.gridheight=gh[i];gc.fill=GridBagConstraints.BOTH;
 				gr.setConstraints(t, gc);c.add(t);}
 			if(gx[i]==1&&gy[i]==3){
@@ -75,7 +92,7 @@ class FirstFrame extends JFrame{
 			if(gx[i]==0&&gy[i]==4){
 				d=new JButton(s[4]);gc.gridx=gx[i];gc.gridy=gy[i];
 				gc.gridwidth=gw[i];gc.gridheight=gh[i];gc.fill=GridBagConstraints.CENTER;
-				gr.setConstraints(d, gc);c.add(d);J_ActionListener03 l1=new J_ActionListener03();d.addActionListener(l1);}
+				gr.setConstraints(d, gc);c.add(d);J_ActionListener00 l1=new J_ActionListener00();d.addActionListener(l1);}
 			if(gx[i]==1&&gy[i]==4){
 				e=new JButton(s[5]);gc.gridx=gx[i];gc.gridy=gy[i];
 				gc.gridwidth=gw[i];gc.gridheight=gh[i];gc.fill=GridBagConstraints.CENTER;
