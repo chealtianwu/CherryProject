@@ -25,7 +25,7 @@ public class DBHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put("account","admin");
         values.put("password","root");
-        values.put("style",0);
+        values.put("style","0");
         db.insert("account",null,values);
     }
 }
