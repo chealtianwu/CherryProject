@@ -16,9 +16,8 @@ class J_ActionListener01 implements ActionListener{
 }
 class J_ActionListener02 implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
-		FirstPanel m=new FirstPanel();
+		FirstFrame m=new FirstFrame();
 		m.setVisible(true);  //创建新的窗体，以达到切换窗体的效果，进入登陆页面
-		
   }
 }
 public class MainFrame extends JFrame{
@@ -26,7 +25,7 @@ public class MainFrame extends JFrame{
 	JLabel b;
 	JButton d;
 	String s[]={"无纸化试卷阅卷模拟系统","没头脑小组","退出系统","开始登陆"};
-	public Menu(){
+	public MainFrame(){
 		super("无纸化试卷阅卷模拟系统");
 		Container c=getContentPane();
 		GridBagLayout gr=new GridBagLayout();
@@ -60,7 +59,7 @@ public class MainFrame extends JFrame{
 		}
 }
 	public static void main (String args[]){
-		Menu app=new Menu();
+		MainFrame app=new MainFrame();
 		app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		app.setSize(260,150);
 		app.setVisible(true);

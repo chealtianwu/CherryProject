@@ -1,12 +1,15 @@
+import java.awt.Container;
+
 import javax.swing.Box;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JTextArea;
 
-public class SecondPanel extends JPanel{
+public class SecondFrame extends JFrame{
 	private JButton preButton;
 	private JButton nextButton;
 	private JTextArea textArea;
@@ -15,7 +18,11 @@ public class SecondPanel extends JPanel{
 	private JRadioButton bButton;
 	private JRadioButton cButton;
 	private JRadioButton dButton;
-	SecondPanel() {
+	SecondFrame() {
+		super();
+		Container container = getContentPane();
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setSize(600,800);
 		//初始化
 		textArea = new JTextArea("题目");
 		preButton = new JButton("上一题");
@@ -48,6 +55,6 @@ public class SecondPanel extends JPanel{
 		vBox1.add(textArea);
 		vBox1.add(hBox1);
 		vBox1.add(hBox2);
-		
+		container.add(vBox1);
 	}
 }
