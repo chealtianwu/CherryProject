@@ -2,8 +2,11 @@ package com.nohead.cherryproject;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
 
 public class DBHelper extends SQLiteOpenHelper {
     public DBHelper(Context context) {
@@ -17,10 +20,10 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("Create table account(_id Integer primary key autoincrement,account text not null,password text not null,style integer not null)");
+        db.execSQL("Create table account(_id Integer primary key autoincrement,account text not null,password text not null,style text not null)");
         //style 标记账户类型，0为教师，1为学生
         db.execSQL("Create table question(_id Integer primary key autoincrement,question text not null,option1 text not null,option2 text not null," +
-                "option3 text not null,option4 text not null,answer Integer not null)");
+                "option3 text not null,option4 text not null,answer text not null)");
         //answer 1，2，3，4分别为ABCD；
         ContentValues values = new ContentValues();
         values.put("account","admin");

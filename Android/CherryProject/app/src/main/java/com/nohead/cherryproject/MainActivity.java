@@ -28,14 +28,11 @@ public class MainActivity extends AppCompatActivity {
     class mainClick implements View.OnClickListener {
         @Override
         public void onClick(View v) {
+            intent = new Intent();
             if (v == studnetButton) {
-
-                    intent = new Intent();
-                    intent.setClass(MainActivity.this, StudentActivity.class);
-
+                intent.setClass(MainActivity.this, StudentActivity.class);
             }else if (v == teacherButton) {
-                    intent = new Intent();
-                    intent.setClass(MainActivity.this, TeacherActivity.class);
+                intent.setClass(MainActivity.this, TeacherActivity.class);
             }
             startActivity(intent);
         }
